@@ -26,25 +26,25 @@ Page({
       name:"hbm0",
       freeTime:"今天晚上"
     },{
-      name:"hbm0",
+      name:"hbm1",
       freeTime:"今天上午"
     },{
-      name:"hbm0",
+      name:"hbm2",
       freeTime:"明天上午"
     }, {
-      name: "hbm0",
+      name: "hbm3",
       freeTime: "今天晚上"
     }, {
-      name: "hbm0",
+      name: "hbm4",
       freeTime: "今天晚上"
     }, {
-      name: "hbm0",
+      name: "hbm5",
       freeTime: "今天上午"
     }, {
-      name: "hbm0",
+      name: "hbm6",
       freeTime: "明天上午"
     }, {
-      name: "hbm0",
+      name: "hbm7",
       freeTime: "今天晚上"
     },]
   },
@@ -155,4 +155,11 @@ Page({
   onCancel2() {
     this.toggle('picker2');
   },
+
+  tap(event){
+    wx.showToast({
+      title: 'name: '+event.target.dataset.name,
+      icon:'none'
+    })
+  }
 });

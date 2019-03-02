@@ -83,8 +83,11 @@
 
 <view wx:for="{{resultList}}">
   <van-cell 
+    bind:tap="tap"
     title="姓名：{{item.name}}"
+    data-name="{{item.name}}"
     label="空闲时间：{{item.freeTime}}"
+    data-freeTime="{{item.freeTime}}"
   />
 </view>
 

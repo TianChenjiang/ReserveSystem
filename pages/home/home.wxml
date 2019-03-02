@@ -9,3 +9,82 @@
     <view slot="action" bind:tap="onSearch">搜索</view>
     </van-search>
 </view>
+
+<view style='display:flex;flex-direction:raw;'>
+  <van-cell bind:tap="tap0"
+    title="{{ title0 }}"
+    is-link
+    arrow-direction="down"
+    border="{{ false }}"
+  />
+  <van-cell bind:tap="tap1"
+    title="{{title1}}"
+    is-link
+    arrow-direction="down"
+    border="{{ false }}"
+  />
+  <van-cell bind:tap="tap2"
+    title="{{title2}}"
+    is-link
+    arrow-direction="down"
+    border="{{ false }}"
+  />
+  
+  
+  <van-action-sheet
+    show="{{ picker0 }}"
+    actions="{{ actions }}"
+    bind:close="onCancel0"
+    bind:select="tap0"
+  >
+    <van-picker
+    show-toolbar
+    title="校区"
+    columns="{{ column0 }}"
+    bind:change="onChange0"
+    bind:confirm="onConfirm0"
+    bind:cancel="onCancel0"
+  />
+  </van-action-sheet>
+
+  <van-action-sheet
+    show="{{ picker1 }}"
+    actions="{{ actions }}"
+    bind:close="onCancel1"
+    bind:select="tap1"
+  >
+    <van-picker
+    show-toolbar
+    title="时间"
+    columns="{{ column1 }}"
+    bind:change="onChange1"
+    bind:confirm="onConfirm1"
+    bind:cancel="onCancel1"
+  />
+  </van-action-sheet>
+
+  <van-action-sheet
+    show="{{ picker2 }}"
+    actions="{{ actions }}"
+    bind:close="onCancel2"
+    bind:select="tap2"
+  >
+    <van-picker
+    show-toolbar
+    title="排序"
+    columns="{{ column2 }}"
+    bind:change="onChange2"
+    bind:confirm="onConfirm2"
+    bind:cancel="onCancel2"
+  />
+  </van-action-sheet>
+
+</view>
+
+<view wx:for="{{resultList}}">
+  <van-cell 
+    title="姓名：{{item.name}}"
+    label="空闲时间：{{item.freeTime}}"
+  />
+</view>
+

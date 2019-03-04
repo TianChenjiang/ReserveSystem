@@ -1,1 +1,1 @@
-<button bindtype="appointment" type="primary">test</button>
+<button bindtap="appointment" type="primary">test</button>

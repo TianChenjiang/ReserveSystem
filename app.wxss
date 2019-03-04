@@ -4,6 +4,7 @@
 @import 'styles/icon.wxss';
 @import 'styles/ui.wxss';
 @import 'styles/helper.wxss';
+@import 'styles/weui2.wxss';
 
 .container {
   height: 100%;

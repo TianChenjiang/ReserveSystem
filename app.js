@@ -5,6 +5,7 @@ import EventEmitter from './utils/event' // 事件总线
 import { getUserInfoById } from './apis/user' // 获取用户信息
 import { autoLogin, getUID } from './utils/permission'
 
+
 // fundebug 错误监控
 var fundebug = require('/utils/fundebug.0.5.0.min.js')
 fundebug.apikey = '这里要填写成你的key'

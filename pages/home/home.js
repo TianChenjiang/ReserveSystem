@@ -1,7 +1,9 @@
 /*
-最后修改
+*最后修改
+*by:nzy
+*7PM,3.5
 */
-
+var Network=require('../../utils/networkRequestServece.js');
 Page({
   data: {
     value: '',
@@ -62,6 +64,7 @@ Page({
 
   onSearch(event) {
     if (this.data.value) {
+      Network.GetTutorById();
       wx.showToast({
         title: '搜索：' + this.data.value,
         icon: 'none'

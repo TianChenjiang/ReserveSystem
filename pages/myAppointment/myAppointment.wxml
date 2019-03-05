@@ -1,0 +1,21 @@
+<!--pages/myAppointment/myAppointment.wxml-->
+<view id="search-bar">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    use-action-slot
+    bind:change="onChange"
+    bind:search="onSearch"
+  >
+    <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+</view>
+
+
+<view wx:for="{{resultList}}">
+  <van-cell 
+    title="姓名：{{item.name}}"
+    data-name="{{item.name}}"
+    label="空闲时间：{{item.freeTime}}"
+  />
+</view>

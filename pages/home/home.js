@@ -9,9 +9,9 @@ Page({
   data: {
     value: '',
 
-    campusSelected: all,
-    timeSelected: all,
-    orderSelected: all,
+    campusSelected: 'all',
+    timeSelected: 'all',
+    orderSelected: 'all',
 
     /**
      *筛选部分，

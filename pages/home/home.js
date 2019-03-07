@@ -161,5 +161,8 @@ Page({
       title: 'name: '+event.target.dataset.name,
       icon:'none'
     })
+    wx.navigateTo({
+      url: '../appointmentCard/appointmentCard',
+    })
   }
 });

@@ -1,6 +1,3 @@
-import { getOrdersByUserId, cancelOrderByOrderId } from '../../../apis/order'
-import { getUID } from '../../../utils/permission'
-
 var app = getApp()
 
 Page({

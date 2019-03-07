@@ -163,19 +163,14 @@ onLoad: function (options) {
    */
   tap(event){
     var item = event.target.dataset.data;
-    Network.GetTutorById(item.id, function(res){
-      //页面跳转至预约页面
-    });
-    wx.setStorage({
-      key: 'appointmentCard',
-      data: '',
-    })
+  
+
     wx.showToast({
       title: 'name: '+item.tutorName+'id:'+item.id,
       icon:'none'
     })
     wx.navigateTo({
-      url: '../appointmentCard/appointmentCard',
+      url: '../appointmentCard/appointmentCard?id=' + item.id,
     })
   },
 

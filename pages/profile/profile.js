@@ -1,5 +1,4 @@
 import Promisify from '../../utils/promisify'
-import { updateUserInfoById } from '../../apis/user'
 import { logout, getUID } from '../../utils/permission'
 
 var app = getApp()

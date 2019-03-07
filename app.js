@@ -2,7 +2,7 @@ import Promise from './utils/es6-promise'
 import promisePolyfill from './utils/promise-polyfill' // 添加 promise.finally
 import { initTipSettings } from './utils/tip' // 使用帮助
 import EventEmitter from './utils/event' // 事件总线
-import { getUserInfoById } from './apis/user' // 获取用户信息
+
 import { autoLogin, getUID } from './utils/permission'
 
 

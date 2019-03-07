@@ -1,4 +1,4 @@
-@import "../../styles/animation.wxss";
+@import "../../../styles/animation.wxss";
 .message-area {
     position: fixed;
     width: 100%;

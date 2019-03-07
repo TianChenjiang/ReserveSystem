@@ -1,4 +1,4 @@
-<import src="/templates/page-status-indicator/index" />
+<import src="/lib/templates/page-status-indicator/index" />
 <wxs module="ORDER_STATUS">
   module.exports = require('../../../../utils/constant.wxs').ORDER_STATUS
 </wxs>

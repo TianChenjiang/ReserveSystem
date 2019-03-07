@@ -1,5 +1,4 @@
-import { getOrdersByUserId } from '../../../apis/order'
-import { getUID } from '../../../utils/permission'
+
 
 Page({
   data: {

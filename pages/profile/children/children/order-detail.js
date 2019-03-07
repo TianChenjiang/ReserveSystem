@@ -1,5 +1,3 @@
-import { getOrderById, cancelOrderByOrderId, renewBookByOrderId, deleteOrderByOrderId } from '../../../../apis/order'
-
 var ORDER_ID // 订单id
 var app = getApp()
 var NB_TIMER
@@ -81,7 +79,7 @@ Page({
           wx.showLoading({ title: `${actionName}中`, mask: true })
           func(ORDER_ID).then(() => {
             wx.showToast({ title: `${actionName}成功` })
-            app.event.emit(eventName, {order: this.data.order})
+            app.event.emit(eventName, { order: this.data.order })
             if (needGoBack) NB_TIMER = setTimeout(() => wx.navigateBack(), 700)
           }).finally(() => wx.hideLoading())
         }
@@ -90,12 +88,12 @@ Page({
   },
 
   _loadPage: function () {
-    this.setData({pageStatus: 'loading'})
+    this.setData({ pageStatus: 'loading' })
     getOrderById(ORDER_ID).then(res => {
       this.setData({
         order: res.data,
         pageStatus: 'done'
       })
-    }).catch(() => this.setData({pageStatus: 'error'}))
+    }).catch(() => this.setData({ pageStatus: 'error' }))
   }
 })

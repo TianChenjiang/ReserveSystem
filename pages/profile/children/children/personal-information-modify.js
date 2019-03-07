@@ -1,7 +1,4 @@
-import { uploadIdCardImg, updateUserInfoById } from '../../../../apis/user'
-import Promisify from '../../../../utils/promisify'
-import { getUID } from '../../../../utils/permission'
-import { DOMAIN_NAME } from '../../../../apis/request'
+
 
 var toptip // 保存toptip组件的引用
 var app = getApp()

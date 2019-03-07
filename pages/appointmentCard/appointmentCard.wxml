@@ -11,15 +11,15 @@
             <view class="weui-form-preview__bd">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">导师</view>
-                    <view class="weui-form-preview__value">刘钦</view>
+                    <view class="weui-form-preview__value">{{item.tutor.tutorName}}</view>
                 </view>
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">学生</view>
-                    <view class="weui-form-preview__value">tcj</view>
+                    <view class="weui-form-preview__value">{{}}</view>
                 </view>
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">起止时间</view>
-                    <view class="weui-form-preview__value">22:00 - 23:00</view>
+                    <view class="weui-form-preview__value">{{item.freeTime}}</view>
                 </view>
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">备注</view>

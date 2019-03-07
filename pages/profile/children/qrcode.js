@@ -1,4 +1,3 @@
-
 import QR from '../../../utils/qrcode.js'
 import { getToken } from '../../../utils/permission'
 

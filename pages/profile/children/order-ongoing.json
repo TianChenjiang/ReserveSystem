@@ -2,8 +2,8 @@
   "navigationBarTitleText": "我的预约",
   "usingComponents":
   {
-    "tab-bar": "/components/tab-bar/index",
-    "load-more": "/components/load-more/index",
-    "no-data": "/components/no-data/index"
+    "tab-bar": "/lib/components/tab-bar/index",
+    "load-more": "/lib/components/load-more/index",
+    "no-data": "/lib/components/no-data/index"
   }
 }

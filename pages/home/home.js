@@ -7,6 +7,9 @@ var Network=require('../../utils/networkRequestService.js');
 
 Page({
   data: {
+    /**
+     * 搜索框输入值
+     */
     value: '',
 
     campusSelected: 'all',
@@ -14,10 +17,10 @@ Page({
     orderSelected: 'all',
 
     /**
-     *筛选部分，
-     *按顺序从0编号
-     *title：选项名
-     *column：选项列表
+     * 筛选部分，
+     * 按顺序从0编号
+     * title：选项名
+     * column：选项列表
      */
     title0:'所有校区',
     column0: ['所有校区','鼓楼校区','仙林校区'],
@@ -27,7 +30,7 @@ Page({
     column2:['默认排序','时间顺序','拼音顺序','拼音倒序'],
     
     /**
-     resultList为搜索结果
+     * resultList为搜索结果
      */
     resultList:null,
   },
@@ -45,9 +48,9 @@ onLoad: function (options) {
 },
 
 /**
- *搜索栏
- *onChange——输入发生变化时调用
- *onSearch——点击搜索时调用
+ * 搜索栏
+ * onChange——输入发生变化时调用
+ * onSearch——点击搜索时调用
  */
   onChange(e) {
     this.setData({
@@ -74,12 +77,12 @@ onLoad: function (options) {
 
 
 /*
-*筛选栏部分
-*对应编号
-*tap——点击时调用
-*onConfirm——点击确认时调用
-*onChange——改变选项，未点确认时调用
-*onCancel——点击取消时调用
+* 筛选栏部分
+* 对应编号
+* tap——点击时调用
+* onConfirm——点击确认时调用
+* onChange——改变选项，未点确认时调用
+* onCancel——点击取消时调用
 */
   toggle(type){
     this.setData({
@@ -153,9 +156,22 @@ onLoad: function (options) {
     this.toggle('picker2');
   },
 
+
+  /**
+   * 列表点击时间
+   * @param {*} event 
+   */
   tap(event){
+    var item = event.target.dataset.data;
+    Network.GetTutorById(item.id, function(res){
+      //页面跳转至预约页面
+    });
+    wx.setStorage({
+      key: 'appointmentCard',
+      data: '',
+    })
     wx.showToast({
-      title: 'name: '+event.target.dataset.name,
+      title: 'name: '+item.tutorName+'id:'+item.id,
       icon:'none'
     })
     wx.navigateTo({

@@ -57,7 +57,7 @@ module.exports={
    * @param {*} Data Date: id, wxId, tutorName, tutorDescription, freeTimeList: {campus, beginTime, endTime, dayOfWeek}
    * @param {*} successFunction 
    */
-  UpdateTutorById(Data,successFunction) {
+  UpdateTutorById(Data, successFunction) {
     wx.request({
       url: url+'UpdateTutorById',
       method: "POST",

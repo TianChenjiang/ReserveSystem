@@ -6,12 +6,10 @@
     "pages/appointmentCard/appointmentCard",
     "pages/myAppointment/myAppointment",
     "pages/profile/children/children/personal-information-modify",
-    "pages/profile/children/personal-information",
-    "pages/profile/children/qrcode",
-    "pages/profile/children/order-ongoing",
-    "pages/profile/children/order-history",
-    "pages/profile/children/children/order-detail",
-    "pages/profile/children/about"
+    "pages/profile/children/personal-information/personal-information",
+    "pages/profile/children/qrcode/qrcode",
+    "pages/profile/children/myappointment-list/myappointment-list",
+    "pages/profile/children/about/about"
   ],
 
   "window": {

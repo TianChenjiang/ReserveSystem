@@ -11,7 +11,9 @@ Page({
     console.log(this.data.item)
 
     var that = this;
-
+    
+    
   }
 
+  
 })

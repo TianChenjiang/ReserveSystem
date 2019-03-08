@@ -1,4 +1,4 @@
-import { USER_STATUS_REVIEWING, USER_STATUS_APPROVED, USER_STATUS_REJECTED } from '../../../utils/constant'
+import { USER_STATUS_REVIEWING, USER_STATUS_APPROVED, USER_STATUS_REJECTED } from '../../../../utils/constant'
 
 var app = getApp()
 

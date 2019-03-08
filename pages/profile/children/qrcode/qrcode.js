@@ -1,5 +1,5 @@
-import QR from '../../../utils/qrcode.js'
-import { getToken } from '../../../utils/permission'
+import QR from '../../../../utils/qrcode.js'
+import { getToken } from '../../../../utils/permission'
 
 Page({
   onReady: function () {

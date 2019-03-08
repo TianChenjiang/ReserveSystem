@@ -5,7 +5,7 @@
   </view>
 </collapse>
 <view class="weui-cells">
-  <navigator url="./children/personal-information" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <navigator url="./children/personal-information/personal-information" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <view class="user-info__avatar">
         <open-data type="userAvatarUrl"></open-data>
@@ -21,14 +21,14 @@
   </navigator>
 </view>
 <view class="weui-cells">
-  <navigator url="./children/qrcode" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <navigator url="./children/qrcode/qrcode" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/images/icon_paper_plane.png" class="icon"></image>
     </view>
     <view class="weui-cell__bd">我的二维码</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
-   <navigator url="./children/order-ongoing" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+   <navigator url="./children/myappointment-list/myappointment-list" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/images/icon_in_process.png" class="icon"></image>
     </view>
@@ -84,7 +84,7 @@
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator> -->
 <view class="weui-cells">
-  <navigator url="./children/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <navigator url="./children/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="../../images/icon_info.png" class="icon"></image>
     </view>

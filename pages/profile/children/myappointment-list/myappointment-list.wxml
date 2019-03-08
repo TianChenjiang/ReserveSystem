@@ -1,5 +1,5 @@
 <wxs module="ORDER_STATUS">
-  module.exports = require('../../../utils/constant.wxs').ORDER_STATUS
+  module.exports = require('../../../../utils/constant.wxs').ORDER_STATUS
 </wxs>
 <wxs src="../../../../utils/biz-helper.wxs" module="helper" />
 <import src="/lib/templates/page-status-indicator/index" />

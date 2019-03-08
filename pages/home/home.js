@@ -3,7 +3,7 @@
 *by:nzy
 *7PM,3.5
 */
-var Network=require('../../utils/networkRequestService.js');
+var Network=require('../../config/networkRequestService.js');
 
 Page({
   data: {

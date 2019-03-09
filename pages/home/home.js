@@ -13,7 +13,9 @@ Page({
     value: '',
 
     campusSelected: 'all',
-    timeSelected: 'all',
+    dateSelected: '20190305',
+    biginTimeSelected: 2130,
+    endTimeSelected: 2200,
     orderSelected: 'all',
 
     /**
@@ -59,20 +61,36 @@ onLoad: function (options) {
   },
 
   onSearch(event) {
-    if (this.data.value) {
-      resultList:;
+    var that = this;
+    //if (this.data.value) {
+      Network.SearchTutorByNameAndFreeTime({
+        "nameKeyword": that.data.value,
+        "freeTimeList": [
+          {
+            "campus": that.data.campusSelected,
+            "date": that.data.dateSelected,
+            "beginTime": that.data.biginTimeSelected,
+            "endTime": that.data.endTimeSelected
+          }
+        ],
+        "pageNum": 0,
+        "pageSize": 5
+      },function(res){
+          that.setData({resultList: res.data.tutorList});
+          console.log(res);
+      })
       wx.showToast({
-        title: '搜索：' + this.data.value,
+        title: '搜索：' + value,
         icon: 'none'
       });
-    }
+    /*}
     else{
       wx.showToast({
         title: '请输入搜索内容',
         icon:'none'
       })
 
-    }
+    }*/
   },
 
 
@@ -103,12 +121,49 @@ onLoad: function (options) {
   },
 
   onConfirm0(event){
+    var that = this;
     const { value, index } = event.detail;
+    var campus = "";
     wx.showToast({
       title: `index: ${index}, value: ${value}`,
       icon:'none'
     });
-    this.setData({title0:value});
+    switch(index)
+    {
+      case 0:
+        campus="all";
+        break;
+      case 1:
+        campus="gulou";
+        break;
+      case 2:
+        campus="xianlin";
+        break;
+      default:
+
+    };
+    this.setData({
+      title0: value,
+      campusSelected: campus
+    });
+
+    Network.SearchTutorByNameAndFreeTime({
+      "nameKeyword": that.data.value,
+      "freeTimeList": [
+        {
+          "campus": that.data.campusSelected,
+          "date": that.data.dateSelected,
+          "beginTime": that.data.biginTimeSelected,
+          "endTime": that.data.endTimeSelected
+        }
+      ],
+      "pageNum": 0,
+      "pageSize": 5
+    }, function(res){
+      that.setData({resultList: res.data.tutorList});
+      console.log(res);
+    });
+    
     this.toggle('picker0');
   },
 

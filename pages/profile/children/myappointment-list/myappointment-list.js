@@ -55,7 +55,7 @@ Page({
     this.setData(params)
 
     // 加载数据
-    getOrdersByUserId(getUID(), type, length).then(res => {
+    /*getOrdersByUserId(getUID(), type, length).then(res => {
       let params = {}
       params[`orders.${type}`] = orders.concat(res.data.orders)
       params[`loadMoreStatus.${type}`] = res.data.orders.length ? 'hidding' : 'nomore'
@@ -66,7 +66,7 @@ Page({
         booking: 'hidding',
         borrowing: 'hidding'
       }
-    }))
+    }))*/
   },
 
   onClickTabBar: function (e) {
@@ -140,5 +140,34 @@ Page({
         }
       })
     }).catch(() => this.setData({pageStatus: 'error'}))
-  }
+  },
+
+
+  /**
+   * 搜索栏部分，
+   * @function onChange  搜索栏内容改变
+   * @function onSearch  点击搜索事件 
+   */
+  onChange(e) {
+    this.setData({
+      value: e.detail
+    });
+  },
+
+  onSearch(event) {
+    if (this.data.value) {
+      resultList:;
+      wx.showToast({
+        title: '搜索：' + this.data.value,
+        icon: 'none'
+      });
+    }
+    else{
+      wx.showToast({
+        title: '请输入搜索内容',
+        icon:'none'
+      })
+
+    }
+  },
 })

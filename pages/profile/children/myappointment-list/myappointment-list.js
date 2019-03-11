@@ -1,7 +1,18 @@
 var app = getApp()
+var Network = require('../../../../config/networkRequestService')
 
 Page({
   data: {
+
+    studentId: 0,
+    pageNum: 0,
+    pageSize: 5,
+    nameKeyword: "",
+
+    resultList: null,
+
+    searchBarValue: "",
+
     pageStatus: 'loading', // error, done
     tabs: ['全部', '预约中', '已失效'],
     types: ['ongoing', 'booking', 'borrowing'],
@@ -27,9 +38,24 @@ Page({
    * 事件在订单详情页(./children/order-detail)中被触发
    */
   onLoad: function () {
+
+    var that = this;
+
     // 监听事件
     app.event.on('orderCanceled', this.onOrderCanceled)
     app.event.on('orderRenewed', this.onOrderRenewed)
+
+    //获取登录的studentID所有的预约，并保存之data.appointmentList
+    Network.SearchAppointmentByStudentIdAndName({
+      "studentId": that.data.studentId,
+      "pageNum": that.data.pageNum,
+      "pageSize": that.data.pageSize,
+      "nameKeyword": that.data.nameKeyword
+    }, function(res){
+      console.log(res)
+      that.setData({resultList: res.data.appointmentList});
+      console.log(that.data.appointmentList)
+    })
 
     this._loadPage()
   },
@@ -150,15 +176,15 @@ Page({
    */
   onChange(e) {
     this.setData({
-      value: e.detail
+      searchBarValue: e.detail
     });
   },
 
   onSearch(event) {
-    if (this.data.value) {
+    if (this.data.searchBarValue) {
       resultList:;
       wx.showToast({
-        title: '搜索：' + this.data.value,
+        title: '搜索：' + this.data.searchBarValue,
         icon: 'none'
       });
     }

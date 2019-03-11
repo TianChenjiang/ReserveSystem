@@ -4,7 +4,6 @@
     "pages/profile/profile",
     "pages/index/index",
     "pages/appointmentCard/appointmentCard",
-    "pages/myAppointment/myAppointment",
     "pages/profile/children/children/personal-information-modify",
     "pages/profile/children/personal-information/personal-information",
     "pages/profile/children/qrcode/qrcode",

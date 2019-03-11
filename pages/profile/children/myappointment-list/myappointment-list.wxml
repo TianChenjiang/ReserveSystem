@@ -6,7 +6,7 @@
 <template data="{{pageStatus}}" is="page-status-indicator"></template>
 <view id="search-bar">
   <van-search
-    value="{{ value }}"
+    value="{{ searchBarValue }}"
     placeholder="请输入搜索关键词"
     use-action-slot
     bind:change="onChange"

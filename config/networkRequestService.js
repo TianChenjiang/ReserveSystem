@@ -4,9 +4,9 @@ module.exports = {
 
   /**
    * 
-   * @param {*} pageNum 
-   * @param {*} pageSize 
-   * @param {*} successFunction Data: tutorList: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
+   * @param {number} pageNum 
+   * @param {number} pageSize 
+   * @param {Function} successFunction Data: tutorList: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
    */
   GetAllTutor(pageNum, pageSize, successFunction) {
     wx.request({
@@ -22,8 +22,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} id Data id
-   * @param {*} successFunction tutor: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
+   * @param {number} id Data id
+   * @param {Function} successFunction tutor: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
    */
   GetTutorById(id, successFunction) {
     wx.request({
@@ -38,8 +38,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} WxID Data: wxId
-   * @param {*} successFunction Data: tutorList: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
+   * @param {number} WxID Data: wxId
+   * @param {Function} successFunction Data: tutorList: {id, wxId, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}}
    */
   GetTutorByWxId(WxID, successFunction) {
     wx.request({
@@ -54,8 +54,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} Data Date: id, wxId, tutorName, tutorDescription, freeTimeList: {campus, beginTime, endTime, dayOfWeek}
-   * @param {*} successFunction 
+   * @param {data} Data Date: id, wxId, tutorName, tutorDescription, freeTimeList: {campus, beginTime, endTime, dayOfWeek}
+   * @param {Function} successFunction 
    */
   UpdateTutorById(Data, successFunction) {
     wx.request({
@@ -68,8 +68,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} ID Data: id
-   * @param {*} successFunction Data: id, wxId, studentNumber, studentName, phone, email
+   * @param {number} ID Data: id
+   * @param {Function} successFunction Data: id, wxId, studentNumber, studentName, phone, email
    */
   GetStudentById(ID, successFunction) {
     wx.request({
@@ -84,8 +84,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} WxID Data: wxId
-   * @param {*} successFunction Data: id, wxId, studentNumber, studentName, phone, email
+   * @param {number} WxID Data: wxId
+   * @param {Function} successFunction Data: id, wxId, studentNumber, studentName, phone, email
    */
   GetStudentByWxId(WxID, successFunction) {
     wx.request({
@@ -101,7 +101,7 @@ module.exports = {
   /**
    * 
    * @param {*} Data Data: id, wxId, studentNumber, studentName, phone, email
-   * @param {*} successFunction Data: id
+   * @param {Function} successFunction Data: id
    */
   UpdateStudentById(Data, successFunction) {
     wx.request({
@@ -115,7 +115,7 @@ module.exports = {
   /**
    * 
    * @param {*} Data Data: tutorId, studentId, beginTime, endTime, reservatingDate, status
-   * @param {*} successFunction Data: id, tutorId, studentId, beginTime, endTime, reservatingDate, status
+   * @param {Function} successFunction Data: id, tutorId, studentId, beginTime, endTime, reservatingDate, status
    */
   InsertAppointment(Data, successFunction) {
     wx.request({
@@ -129,7 +129,7 @@ module.exports = {
   /**
    * 
    * @param {*} Data Data: tutorId, pageNum, pageSize
-   * @param {*} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status} 
+   * @param {Function} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status} 
    */
   SearchAppointmentByTutorId(Data, successFunction) {
     wx.request({
@@ -142,8 +142,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} TutorID Tutor ID
-   * @param {*} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status}
+   * @param {number} TutorID Tutor ID
+   * @param {Function} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status}
    */
   SearchActiveAppointmentByTutorId(TutorID, successFunction) {
     wx.request({
@@ -159,7 +159,7 @@ module.exports = {
   /**
    * 
    * @param {*} Data Data: nameKeyword, freeTimeList: {campus, date, beginTime, endTime}, pageNum, pageSize
-   * @param {*} successFunction 
+   * @param {Function} successFunction 
    */
   SearchTutorByNameAndFreeTime(Data, successFunction) {
     wx.request({
@@ -174,7 +174,7 @@ module.exports = {
   /**
    * 
    * @param {*} StuInfo Data: studentNumber, studentName, phone, email, wxId
-   * @param {*} successFunction checking if it is successful
+   * @param {Function} successFunction checking if it is successful
    * @returns Data: id, wxId, studentNumber, studentName, phone, email
    */
   InsertStudent(StuInfo, successFunction) {
@@ -188,8 +188,8 @@ module.exports = {
 
   /**
    * 
-   * @param {*} Id Appointment ID
-   * @param {*} successFunction 
+   * @param {number} Id Appointment ID
+   * @param {Function} successFunction 
    * @returns Data: id, tutor: {id, tutorName, tutorDesciption, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, sutdent: {id, wxId, studentNumber, phone, email}, beginTime, endTime, reservatingDate, status
    */
   GetAppointmentById(Id, successFunction) {
@@ -197,6 +197,20 @@ module.exports = {
       url: url + 'GetAppointmentById',
       method: "GET",
       data: Id,
+      success: successFunction
+    })
+  },
+
+  /**
+   * 
+   * @param {*} Data {studentId, pageNum, pageSize, nameKeyword}
+   * @param {Function} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status}
+   */
+  SearchAppointmentByStudentIdAndName(Data, successFunction){
+    wx.request({
+      url: url + 'SearchAppointmentByStudentIdAndName',
+      method: "POST",
+      data: Data,
       success: successFunction
     })
   }

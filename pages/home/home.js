@@ -207,17 +207,17 @@ onLoad: function (options) {
 
 
   /**
-   * 列表点击时间
+   * 列表点击事件
    * @param {*} event 
    */
   tap(event){
     var item = event.target.dataset.data;
   
 
-    wx.showToast({
+    /*wx.showToast({
       title: 'name: '+item.tutorName+'id:'+item.id,
       icon:'none'
-    })
+    })*/
     wx.navigateTo({
       url: '../appointmentCard/appointmentCard?id=' + item.id,
     })
@@ -225,8 +225,8 @@ onLoad: function (options) {
 
 
   /**
-   * 
-   * @param {*} successFunction 
+   * Network.SearchTutorByNameAndFreeTime在此page的封装，只需重写successFunction
+   * @param {function} successFunction 
    */
   searchTutorByNameAndFreeTime(successFunction){
     var that = this;
@@ -245,6 +245,14 @@ onLoad: function (options) {
     }, successFunction)
   },
 
+  /**
+   * 将Date变量格式化，
+   * yyyy-MM-dd hh:mm:ss:S q 
+   * 2019-03-11 20:13:00:00 1
+   * 2019年3月11日 20时13分0秒0毫秒 一季度
+   * @param {Date} date 输入Date类型变量
+   * @param {string} fmt 格式
+   */
   getDateInFormat(date, fmt){
     var o = {
       "M+": date.getMonth()+1,

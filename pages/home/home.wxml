@@ -1,6 +1,6 @@
 <view id="search-bar">
   <van-search
-    value="{{ value }}"
+    value="{{ searchBarValue }}"
     placeholder="请输入搜索关键词"
     use-action-slot
     bind:change="onChange"
@@ -87,7 +87,7 @@
   />
   </van-action-sheet>
 
-<view wx:for="{{resultList}}">
+<view wx:for="{{resultList}}" wx:key="tutorName">
   <van-cell 
     bind:tap="tap"
     title="姓名：{{item.tutorName}}"

@@ -10,7 +10,7 @@
     </van-search>
 </view>
 
-<view style='display:flex;flex-direction:raw;'>
+<view style='display:flex;flex-direction:row;justify-content:space-around;'>
   <van-cell bind:tap="tap0"
     title="{{ title0 }}"
     is-link
@@ -31,7 +31,11 @@
   />
   
   
-  <van-action-sheet
+  
+
+</view>
+
+<van-action-sheet
     show="{{ picker0 }}"
     actions="{{ actions }}"
     bind:close="onCancel0"
@@ -78,8 +82,6 @@
     bind:cancel="onCancel2"
   />
   </van-action-sheet>
-
-</view>
 
 <view wx:for="{{resultList}}">
   <van-cell 

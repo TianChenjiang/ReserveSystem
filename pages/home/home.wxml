@@ -57,11 +57,13 @@
     bind:close="onCancel1"
     bind:select="tap1"
   >
-    <van-picker
-    show-toolbar
-    title="时间"
-    columns="{{ column1 }}"
-    bind:change="onChange1"
+    <van-datetime-picker
+    title="开始时间"
+    type="datetime"
+    data-type="datetime"
+    value="{{ beginDate }}"
+    min-date="{{ currentDate }}"
+    bind:input="onDateSelectChange"
     bind:confirm="onConfirm1"
     bind:cancel="onCancel1"
   />
@@ -73,11 +75,13 @@
     bind:close="onCancel2"
     bind:select="tap2"
   >
-    <van-picker
-    show-toolbar
-    title="排序"
-    columns="{{ column2 }}"
-    bind:change="onChange2"
+    <van-datetime-picker
+    title="结束时间"
+    type="datetime"
+    data-type="datetime"
+    value="{{ endDate }}"
+    min-date="{{ currentbeginDateSelected }}"
+    bind:input="onDateSelectChange"
     bind:confirm="onConfirm2"
     bind:cancel="onCancel2"
   />

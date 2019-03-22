@@ -232,14 +232,15 @@ onLoad: function (options) {
     var that = this;
     Network.SearchTutorByNameAndFreeTime({
       "nameKeyword": that.data.serchBarValue,
-      "freeTimeList": [
-        {
-          "campus": that.data.campusSelected,
-          "date": that.data.dateSelected,
-          "beginTime": that.data.biginTimeSelected,
-          "endTime": that.data.endTimeSelected
-        }
-      ],
+      "freeTimeList": [],
+      // "freeTimeList": [
+      //   {
+      //     "campus": that.data.campusSelected,
+      //     "date": that.data.dateSelected,
+      //     "beginTime": that.data.biginTimeSelected,
+      //     "endTime": that.data.endTimeSelected
+      //   }
+      // ],
       "pageNum": 0,
       "pageSize": 5
     }, successFunction)

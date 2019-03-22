@@ -222,7 +222,21 @@ module.exports = {
    */
   InsertTutor(Data, successFunction){
     wx.request({
-      url: rul + 'InsertTutor',
+      url: url + 'InsertTutor',
+      method: "POST",
+      data: Data,
+      success: successFunction
+    })
+  },
+
+  /**
+   * 
+   * @param {*} Data Data: {id, tutorId, studentId, beginTime, endTime, reservatingDate, status}
+   * @param {*} successFunction 
+   */
+  UpdateAppointmentById(Data, successFunction){
+    wx.request({
+      url: url + 'UpdateAppointmentById',
       method: "POST",
       data: Data,
       success: successFunction

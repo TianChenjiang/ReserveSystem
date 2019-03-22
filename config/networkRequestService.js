@@ -128,12 +128,12 @@ module.exports = {
 
   /**
    * 
-   * @param {*} Data Data: tutorId, pageNum, pageSize
+   * @param {*} Data Data: {tutorId, nameKeyword, status, pageNum, pageSize}
    * @param {Function} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status} 
    */
-  SearchAppointmentByTutorId(Data, successFunction) {
+  SearchAppointmentByTutorIdAndNameAndStatus(Data, successFunction) {
     wx.request({
-      url: url + 'SearchAppointmentByTutorId',
+      url: url + 'SearchAppointmentByTutorIdAndNameAndStatus',
       method: "POST",
       data: Data,
       success: successFunction
@@ -203,12 +203,26 @@ module.exports = {
 
   /**
    * 
-   * @param {*} Data {studentId, pageNum, pageSize, nameKeyword}
+   * @param {*} Data {studentId, status, pageNum, pageSize, nameKeyword}
    * @param {Function} successFunction appointmentList: {id, tutor: {id, tutorName, tutorDescription, freeTimeList: {id, campus, dayOfWeek, beginTime, endTime}, wxId}, student: {id, wxId, studentNumber, studentName, phone, email}, beginTime, endTime, reservatingDate, status}
    */
-  SearchAppointmentByStudentIdAndName(Data, successFunction){
+  SearchAppointmentByStudentIdAndNameAndStatus(Data, successFunction){
     wx.request({
-      url: url + 'SearchAppointmentByStudentIdAndName',
+      url: url + 'SearchAppointmentByStudentIdAndNameAndStatus',
+      method: "POST",
+      data: Data,
+      success: successFunction
+    })
+  },
+
+  /**
+   * 
+   * @param {*} Data {wxId, tutorName, tutorDescription, freeTimeList: {campus, dayOfWeek, beginTime, endTime}}
+   * @param {Function} successFunction 
+   */
+  InsertTutor(Data, successFunction){
+    wx.request({
+      url: rul + 'InsertTutor',
       method: "POST",
       data: Data,
       success: successFunction

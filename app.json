@@ -8,7 +8,8 @@
     "pages/profile/children/personal-information/personal-information",
     "pages/profile/children/qrcode/qrcode",
     "pages/profile/children/myappointment-list/myappointment-list",
-    "pages/profile/children/about/about"
+    "pages/profile/children/about/about",
+    "pages/profile/children/myappointment-list/historical-appointment-card/historical-appointment-card"
   ],
 
   "window": {

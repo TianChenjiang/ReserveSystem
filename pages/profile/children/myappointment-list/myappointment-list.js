@@ -152,7 +152,7 @@ Page({
   /**
    * 加载页面
    */
-  _loadPage: function () {
+  /*_loadPage: function () {
     this.setData({pageStatus: 'loading'})
     Promise.all([
       getOrdersByUserId(getUID(), 'ongoing'),
@@ -168,7 +168,7 @@ Page({
         }
       })
     }).catch(() => this.setData({pageStatus: 'error'}))
-  },
+  },*/
 
 
   /**

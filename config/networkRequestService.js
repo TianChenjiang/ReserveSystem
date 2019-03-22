@@ -196,7 +196,7 @@ module.exports = {
     wx.request({
       url: url + 'GetAppointmentById',
       method: "GET",
-      data: Id,
+      data: {"id": Id,},
       success: successFunction
     })
   },
@@ -232,7 +232,7 @@ module.exports = {
   /**
    * 
    * @param {*} Data Data: {id, tutorId, studentId, beginTime, endTime, reservatingDate, status}
-   * @param {*} successFunction 
+   * @param {Function} successFunction 
    */
   UpdateAppointmentById(Data, successFunction){
     wx.request({

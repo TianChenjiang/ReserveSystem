@@ -17,3 +17,11 @@
 </view>
 <tab-bar tabs="{{tabs}}" bindclick="onClickTabBar">
 </tab-bar>
+<view wx:for="{{resultList}}" wx:key="tutorName">
+  <van-cell 
+    bind:tap="tap"
+    title="导师：{{item.tutor.tutorName}}"
+    label="时间：{{item.beginTime}} - {{item.endTime}}"
+    data-data="{{item}}"
+  />
+</view>

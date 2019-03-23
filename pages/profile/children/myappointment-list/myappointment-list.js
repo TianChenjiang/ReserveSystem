@@ -4,10 +4,11 @@ var Network = require('../../../../config/networkRequestService')
 Page({
   data: {
 
-    studentId: 0,
+    studentId: 4,
     pageNum: 0,
     pageSize: 5,
     nameKeyword: "",
+    status: "All",
 
     resultList: null,
 
@@ -46,8 +47,9 @@ Page({
     app.event.on('orderRenewed', this.onOrderRenewed)
 
     //获取登录的studentID所有的预约，并保存之data.appointmentList
-    Network.SearchAppointmentByStudentIdAndName({
+    Network.SearchAppointmentByStudentIdAndNameAndStatus({
       "studentId": that.data.studentId,
+      "status": that.data.status,
       "pageNum": that.data.pageNum,
       "pageSize": that.data.pageSize,
       "nameKeyword": that.data.nameKeyword
@@ -150,7 +152,7 @@ Page({
   /**
    * 加载页面
    */
-  _loadPage: function () {
+  /*_loadPage: function () {
     this.setData({pageStatus: 'loading'})
     Promise.all([
       getOrdersByUserId(getUID(), 'ongoing'),
@@ -166,7 +168,7 @@ Page({
         }
       })
     }).catch(() => this.setData({pageStatus: 'error'}))
-  },
+  },*/
 
 
   /**
@@ -181,8 +183,29 @@ Page({
   },
 
   onSearch(event) {
+    var that = this;
     if (this.data.searchBarValue) {
       resultList:;
+      /*Network.InsertStudent({
+        "studentNumber": 171250634,
+        "studentName": "hbm",
+        "phone": 110,
+        "email": "10000@qq.com",
+        "wxId": "PonyMa"
+      }, function(res){
+        console.log(res);
+        that.setData({studentId: res.data.id})
+      })*/
+      /*Network.InsertAppointment({
+        "tutorId": 1,
+        "studentId": 4,
+        "beginTime": 1200,
+        "endTime": 1230,
+        "reservatingDate": "20190401",
+        "status": "Applying"
+      }, function(res){
+        console.log(res);
+      })*/
       wx.showToast({
         title: '搜索：' + this.data.searchBarValue,
         icon: 'none'
@@ -196,4 +219,16 @@ Page({
 
     }
   },
+
+  /**
+   * 显示的appointment列表点击事件
+   * item: appointment, 点击的appointment
+   */
+  tap(event){
+    var item = event.target.dataset.data;
+
+    wx.navigateTo({
+      url: '../myappointment-list/historical-appointment-card/historical-appointment-card?id=' + item.id,
+    })
+  }
 })

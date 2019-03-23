@@ -1,0 +1,17 @@
+<view class="weui-form-preview__hd">
+    <view class="weui-form-preview__label">导师：</view>
+    <view class="weui-form-preview__value_in-hd">{{tutorName}}</view>
+</view>
+<view class="weui-form-preview__hd">
+    <view class="weui-form-preview__label">日期：</view>
+    <view class="weui-form-preview__value_in-hd">{{reservatingDate}}</view>
+</view>
+<view class="weui-form-preview__hd">
+    <view class="weui-form-preview__label">时间：</view>
+    <view class="weui-form-preview__value_in-hd">{{beginTime}}~{{endTime}}</view>
+</view>
+<view class="weui-form-preview__hd">
+    <view class="weui-form-preview__label">状态：</view>
+    <view class="weui-form-preview__value_in-hd">{{consequence}}</view>
+</view>
+<van-button type="danger" size="large" class="demo-margin-right" bind:tap="cancel" data-id="{{id}}" disabled="{{disabled}}">{{cancelButtonText}}</van-button>

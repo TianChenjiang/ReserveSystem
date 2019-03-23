@@ -1,3 +1,12 @@
 .weui-form-preview{
     margin-bottom: 25px;
 }
+.mini-btn{
+    margin-right: 1px;
+    border: 0;
+    width: 50%;
+}
+.page{
+  margin: 20rpx;
+  padding-top: 80rpx;
+}

@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "详细信息",
+  "usingComponents": {
+    "w-card": "/lib/dist2/w-card/index"
+  }
+}

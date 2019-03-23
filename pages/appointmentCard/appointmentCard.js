@@ -70,5 +70,22 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  /**
+   * 选择一个时间
+   */
+  chooseTime: function () {
+    wx.showModal({
+      title: '',
+      content:  this.data.list.beginTime  -  this.data.list.endTime ,
+    })
+  },
+
+/**
+ * 生成预约
+ */
+  confirmAppointment: function() {
+    Network.InsertAppointment()
   }
 })

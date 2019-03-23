@@ -35,7 +35,7 @@
                 <view wx:for="{{item.freeTimeList}}"wx:for-item="list">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">可选起止时间</view>
-                    <view class="weui-form-preview__value">   <button class="weui-btn mini-btn"  size="mini" bindtap='chooseTime'>{{list.beginTime}} - {{list.endTime}} </button></view>
+                    <view class="weui-form-preview__value">   <button class="weui-btn mini-btn"  size="mini" bindtap='chooseTime' data-begintime="{{list.beginTime}}" data-endtime="{{list.endTime}}"  >{{list.beginTime}} - {{list.endTime}} </button></view>
                 </view>
                 </view>
                 <view class="weui-form-preview__item">

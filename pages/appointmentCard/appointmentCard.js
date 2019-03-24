@@ -9,9 +9,8 @@ Page({
   data: {
     //tutor 为点击的导师
     tutor_result: null,
-
+    id: 0,
     currentDate: new Date().getTime(),
-    
   },
 
   /**
@@ -21,8 +20,9 @@ Page({
     var that = this;
     console.log(options.id);
     Network.GetTutorById(options.id, function(res){
+      console.log(res)
       that.setData({tutor_result: res.data});
-      console.log(res.data);
+      that.setData({id: res.data.tutor.id})
     })
   },
 
@@ -85,18 +85,29 @@ Page({
       content: '你确定选择' + ' ' + event.target.dataset.begintime.toString() + '-' + event.target.dataset.endtime + ' 这个时间段吗？',
       success: function(res){
         if (res.confirm){
-
-          console.log('用户确定')
-          console.log(that.data.currentDate + '哈哈')
+          
+          
+           /*Network.InsertAppointment({
+        "tutorId": 1,
+        "studentId": 4,
+        "beginTime": 1200,
+        "endTime": 1230,
+        "reservatingDate": "20190401",
+        "status": "Applying"
+      }, function(res){
+        console.log(res);
+      })*/
           Network.InsertAppointment({
-            "id": that.data.tutor_result.id,
-            "tutorId": that.data.tutor_result,
-            "studentId": 0, //TODO
+            // "id": that.data.tutor_result.id,
+            "tutorId": that.data.id,
+            "studentId": 1, //TODO:
             "beginTime": event.target.dataset.begintime,
             "endTime": event.target.dataset.endtime,
-            "reservatingDate": that.data.currentDate,
+            "reservatingDate": "20190401",
             "status": "Applying"
-          }, successFunction)
+          }, function(res){
+            console.log('新增预约')
+          })
         }
         else if (res.cancel){
           console.log('用户取消')

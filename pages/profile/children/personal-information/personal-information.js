@@ -1,4 +1,4 @@
-import { USER_STATUS_REVIEWING, USER_STATUS_APPROVED, USER_STATUS_REJECTED } from '../../../../utils/constant'
+
 
 var app = getApp()
 
@@ -23,7 +23,7 @@ Page({
    * @listens <userInfoChanged> app.setUserInfo 调用时触发
    */
   onLoad: function () {
-    wx.showLoading({title: '加载中', mask: true})
+    //wx.showLoading({title: '加载中', mask: true})
     this._setUserInfo().finally(() => wx.hideLoading())
 
     // 监听事件
@@ -54,7 +54,7 @@ Page({
         })
       } else if (userInfo.status === USER_STATUS_REJECTED) {
         this.setData({
-          tips: `您的信息没有通过审核，原因是：${userInfo.review_msg}。您可修改后重新提交审核，审核通过后您将可以在线预约图书。`
+          tips: `您的信息没有通过审核，原因是：${userInfo.review_msg}。您可修改后重新提交审核，审核通过即可。`
         })
       }
     })

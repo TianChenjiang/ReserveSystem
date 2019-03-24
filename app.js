@@ -3,7 +3,8 @@ import promisePolyfill from './utils/promise-polyfill' // 添加 promise.finally
 import { initTipSettings } from './utils/tip' // 使用帮助
 import EventEmitter from './utils/event' // 事件总线
 
-import { autoLogin, getUID } from 'utils/permission'
+// import { autoLogin, getUID } from 'utils/permission'
+import {  getUID } from 'utils/permission'
 
 
 // fundebug 错误监控
@@ -13,6 +14,10 @@ fundebug.setSystemInfo = true
 fundebug.releaseStage = 'production'
 
 App({
+
+  globalData: {
+    userInfo: '',
+  },
   /**
    * 全局事件总线
    */
@@ -20,7 +25,7 @@ App({
 
   onLaunch: function () {
     // 自动登录
-    autoLogin()
+    //autoLogin()
 
     // 初始化帮助信息
     initTipSettings()

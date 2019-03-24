@@ -1,5 +1,5 @@
 import Promisify from '../../utils/promisify'
-import { logout, getUID } from '../../utils/permission'
+import {  getUID } from '../../utils/permission'
 
 var app = getApp()
 
@@ -10,17 +10,18 @@ Page({
 
   onLoad: function () {
     // 获取用户授权，更新用户昵称与头像
-    Promisify(wx.getUserInfo)()
-      .then(this._updateUserInfo)
-      .catch(() => this.setData({ showLoginBtn: true }))
+    // Promisify(wx.getUserInfo)()
+    //   .then(this._updateUserInfo)
+    //   .catch(() => this.setData({ showLoginBtn: true }))
   },
 
   onLogout: function () {
     wx.showModal({
       content: '确定退出登录？',
-      success: res => {
-        if (res.confirm && logout()) {
-          wx.reLaunch({ url: '/pages/register/register' })
+      success: function(res) {
+        if (res.confirm) {
+          console.log('退出')
+          wx.reLaunch({ url: '/pages/index/index' })
         }
       }
     })
